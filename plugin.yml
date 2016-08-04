@@ -1,0 +1,4 @@
+name: McIDE
+version: 1.0
+author: Simon Meusel
+main: de.simonmeusel.mcide.plugin.Plugin

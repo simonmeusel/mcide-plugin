@@ -1,0 +1,4 @@
+enable: true
+user:
+  root:
+    password: root
