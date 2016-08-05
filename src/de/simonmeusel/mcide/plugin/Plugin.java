@@ -76,6 +76,11 @@ public class Plugin extends JavaPlugin {
 			public void run() {
 				try {
 					JSONObject data = (JSONObject) jsonParser.parse(dataString);
+					
+					if (!data.get("password").equals(getConfig().getString("password"))) {
+						System.out.println("[Mcide] Incorrect password!");
+						return;
+					}
 
 					World world = getWorld(data.get("world").toString());
 

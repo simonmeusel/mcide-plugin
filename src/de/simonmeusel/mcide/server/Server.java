@@ -59,8 +59,6 @@ public class Server {
 								dataString += line;
 							}
 
-							System.out.println(dataString);
-
 							plugin.setCommands(dataString, address);
 						} catch (Exception e) {
 							e.printStackTrace();
@@ -68,6 +66,7 @@ public class Server {
 					}
 				} catch (Exception e) {
 					System.out.println("[Mcide] Server closed!");
+					e.printStackTrace();
 				}
 			}
 		});
