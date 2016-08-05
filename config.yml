@@ -4,6 +4,9 @@
 # and execute the command
 # keytool -genkey -alias mcide -keystore keystore
 
+# Password of the server
+password: supersecurepassword
+
 # Keystore for the SSL Certificate
 keystore:
   # Password for the keystore
