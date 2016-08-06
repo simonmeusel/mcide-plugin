@@ -1,5 +1,10 @@
 # McIDE Bukkit/Spigot plugin
 
+## Installation
+
+For a installation guide for the Atom package go [here](https://github.com/simonmeusel/mcide-for-atom)
+For a installation guide for the Sublime package go [here](https://github.com/simonmeusel/mcide-for-sublime)
+
 ## License
 
 Copyright (c) 2016 Simon Meusel
