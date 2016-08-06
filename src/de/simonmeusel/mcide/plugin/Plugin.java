@@ -31,11 +31,11 @@ public class Plugin extends JavaPlugin {
 
 		getDataFolder().mkdirs();
 
+		boolean allowNoSSL = getConfig().getBoolean("allowNoSSL");
+		boolean allowSSL = getConfig().getBoolean("allowSSL");
+
 		// Is the keystore generated
-		if (new File(getDataFolder(), "keystore").isFile()) {
-			server = new Server(this, getConfig().getString("keystore.password"));
-			jsonParser = new JSONParser();
-		} else {
+		if (!new File(getDataFolder(), "keystore").isFile()) {
 			if (getConfig().getBoolean("keystore.autogenerate.enabled") == true) {
 				System.out.println("[Mcide] Generting keystore file");
 				SecureRandom random = new SecureRandom();
@@ -48,23 +48,25 @@ public class Plugin extends JavaPlugin {
 
 					getConfig().set("keystore.password", password);
 					saveConfig();
-					server = new Server(this, getConfig().getString("keystore.password"));
-					jsonParser = new JSONParser();
 				} catch (Exception e) {
+					allowSSL = false;
 					System.err.println("[Mcide] Failed to generate the keystore file! Check the config file");
 					e.printStackTrace();
 				}
 			} else {
+				allowSSL = false;
 				System.err.println("[Mcide] Keystore not generated! Check the config file");
 			}
 		}
+		
+		server = new Server(this, getConfig().getString("keystore.password"), allowSSL, allowNoSSL, getConfig().getInt("port"));
+		jsonParser = new JSONParser();
 
 	}
 
 	@Override
 	public void onDisable() {
 		server.stop();
-		Bukkit.getScheduler().cancelTask(server.serverTask);
 		Bukkit.getScheduler().cancelTasks(this);
 	}
 

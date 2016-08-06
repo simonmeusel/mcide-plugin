@@ -7,6 +7,12 @@
 # Password of the server
 password: supersecurepassword
 
+## port used for no ssl, port + 1 used for ssl
+port: 25563
+
+allowNoSSL: true
+allowSSL: true
+
 # Keystore for the SSL Certificate
 keystore:
   # Password for the keystore
