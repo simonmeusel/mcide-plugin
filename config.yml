@@ -7,7 +7,7 @@
 # Password of the server
 password: supersecurepassword
 
-## port used for no ssl, port + 1 used for ssl
+# Port used for no ssl, port + 1 used for ssl
 port: 25563
 
 allowNoSSL: true
