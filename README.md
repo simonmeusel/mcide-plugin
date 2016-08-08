@@ -1,5 +1,7 @@
 # McIDE Bukkit/Spigot plugin
 
+[![Documentation Status](https://readthedocs.org/projects/mcide-plugin/badge/?version=latest)](http://mcide-plugin.readthedocs.io/en/latest/?badge=latest)
+
 ## Requirements
 - Bukkit/Spigot: [https://www.spigotmc.org/](https://www.spigotmc.org/)
 - Minimal Minecraft version: 1.10 - Frostburn Update
