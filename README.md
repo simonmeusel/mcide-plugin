@@ -1,5 +1,5 @@
-[![Stories in Ready](https://badge.waffle.io/simonmeusel/mcide-plugin.png?label=ready&title=Ready)](https://waffle.io/simonmeusel/mcide-plugin)
 # McIDE Bukkit/Spigot plugin
+[![Stories in Ready](https://badge.waffle.io/simonmeusel/mcide-plugin.png?label=ready&title=Ready)](https://waffle.io/simonmeusel/mcide-plugin)
 
 ## Wiki
 For Guides on istallation and usage go to the [wiki](https://github.com/simonmeusel/mcide-plugin/wiki)
