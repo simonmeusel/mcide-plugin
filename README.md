@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/simonmeusel/mcide-plugin.png?label=ready&title=Ready)](https://waffle.io/simonmeusel/mcide-plugin)
 # McIDE Bukkit/Spigot plugin
 
 ## Wiki
