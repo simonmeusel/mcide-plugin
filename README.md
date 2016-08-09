@@ -1,18 +1,7 @@
 # McIDE Bukkit/Spigot plugin
 
-## Requirements
-- Bukkit/Spigot: [https://www.spigotmc.org/](https://www.spigotmc.org/)
-- Minimal Minecraft version: 1.10 - Frostburn Update
-
-## Installation
-
-1. Download the plugin jar from [here](https://github.com/simonmeusel/mcide-plugin/releases)
-2. Put in into the plugins folder of your Bukkit/spigot server
-3. Go to the config file and configure password and SLL settings. There is a interactive generator [here](https://simonmeusel.github.io/mcide/generator.html)
-
-For a installation guide for the Atom package go [here](https://github.com/simonmeusel/mcide-for-atom)
-
-For a installation guide for the Sublime package go [here](https://github.com/simonmeusel/mcide-for-sublime)
+## Wiki
+For Guides on istallation and usage go to the [wiki](https://github.com/simonmeusel/mcide-plugin/wiki)
 
 ## License
 
