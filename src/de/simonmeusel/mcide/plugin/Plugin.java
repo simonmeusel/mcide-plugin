@@ -125,7 +125,7 @@ public class Plugin extends JavaPlugin {
 			}
 		}
 		world.getBlockAt(new Location(world, x, y, z)).setType(Material.AIR);
-		;
+		
 	}
 
 	@SuppressWarnings("deprecation")
