@@ -3,14 +3,8 @@ package de.simonmeusel.mcide.plugin;
 import java.io.File;
 import java.math.BigInteger;
 import java.security.SecureRandom;
-import java.util.UUID;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.World;
-import org.bukkit.block.Block;
-import org.bukkit.block.CommandBlock;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -84,74 +78,15 @@ public class Plugin extends JavaPlugin {
 						return;
 					}
 
-					World world = getWorld(data.get("world").toString());
+					new CommandGenrator(data);
 
-					String[] commands = data.get("commands").toString().split("\n");
-
-					generateCommands(commands, world);
-
-					System.out.println("[" + address + "] Mcide generated " + commands.length + " commands in World "
-							+ world.getName() + "!");
+					System.out.println("[" + address + "] Mcide generated commands!");
 
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
-	}
-
-	private void generateCommands(String[] commands, World world) {
-		int x = 0;
-		int y = 1;
-		int z = 0;
-
-		generateCommandBlock(new Location(world, x, 0, z), Material.COMMAND_REPEATING, "");
-
-		for (String command : commands) {
-			generateCommandBlock(new Location(world, x, y, z), Material.COMMAND_CHAIN, command);
-
-			y += 1;
-
-			if (y > 255) {
-				y = 1;
-				x += 1;
-				generateCommandBlock(new Location(world, x, 0, z), Material.COMMAND_REPEATING, "");
-			}
-
-			if (x > 64) {
-				x = 0;
-				z += 1;
-				generateCommandBlock(new Location(world, x, 0, z), Material.COMMAND_REPEATING, "");
-			}
-		}
-		world.getBlockAt(new Location(world, x, y, z)).setType(Material.AIR);
-		
-	}
-
-	@SuppressWarnings("deprecation")
-	private void generateCommandBlock(Location location, Material material, String command) {
-		Block block = location.getBlock();
-		block.setType(material);
-		CommandBlock commandBlock = (CommandBlock) block.getState();
-		commandBlock.setCommand(command);
-		commandBlock.setRawData((byte) 1);
-		commandBlock.update();
-		if (material.equals(Material.COMMAND_REPEATING)) {
-			getServer().dispatchCommand(getServer().getConsoleSender(),
-					"blockdata " + location.getBlockX() + " 0 " + location.getBlockZ() + " {auto:1b}");
-		}
-	}
-
-	private World getWorld(String worldString) {
-		World world = null;
-
-		if ((world = Bukkit.getWorld(worldString)) == null) {
-			if ((world = Bukkit.getWorld(UUID.fromString(worldString))) == null) {
-				world = Bukkit.getWorlds().get(0);
-			}
-		}
-
-		return world;
 	}
 
 }
