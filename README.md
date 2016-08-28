@@ -1,5 +1,5 @@
 # McIDE Bukkit/Spigot plugin
-[![Stories in Ready](https://badge.waffle.io/simonmeusel/mcide-plugin.png?label=ready&title=Ready)](https://waffle.io/simonmeusel/mcide-plugin)
+[![Website](https://img.shields.io/badge/website-simonmeusel.github.io-lightgrey.svg)](https://simonmeusel.github.io/mcide/)
 
 ## Wiki
 For Guides on istallation and usage go to the [wiki](https://github.com/simonmeusel/mcide-plugin/wiki)
